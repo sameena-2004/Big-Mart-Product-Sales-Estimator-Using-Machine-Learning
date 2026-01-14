@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #e3f2fd, #ffffff);
+}
+
+.container {
+    width: 850px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #0d47a1;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555;
+}
+
+.card, .result {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    flex: 1;
+    padding: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1976d2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.price {
+    font-size: 28px;
+    color: green;
+    font-weight: bold;
+}
+
+.baseline {
+    font-size: 18px;
+    color: #444;
+}
+
+.risk {
+    font-weight: bold;
+    color: red;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big Mart Sales Estimator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🛒 Big Mart Product Sales Estimator</h1>
+    <p class="subtitle">Sales Prediction with Explanation</p>
+
+    <form method="POST" action="/predict" class="card">
+
+        <div class="row">
+            <input name="mrp" placeholder="Item MRP (₹)" required>
+            <input name="weight" placeholder="Item Weight (kg)" required>
+        </div>
+
+        <div class="row">
+            <input name="visibility" placeholder="Item Visibility (0–1)" required>
+        </div>
+
+        <div class="row">
+            <select name="outlet_type">
+                <option value="0">Grocery Store</option>
+                <option value="1">Supermarket</option>
+            </select>
+
+            <select name="location">
+                <option value="0">Tier 1 City</option>
+                <option value="1">Tier 2 City</option>
+                <option value="2">Tier 3 City</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <select name="season">
+                <option value="0">Off Season</option>
+                <option value="1">Normal Season</option>
+                <option value="2">Festival Season</option>
+            </select>
+
+            <select name="demand">
+                <option value="-1">Demand Decreasing</option>
+                <option value="0">Demand Stable</option>
+                <option value="1">Demand Increasing</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Sales</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+
+        <h3>Baseline Sales (Average Case)</h3>
+        <p class="baseline">₹ {{ baseline }}</p>
+
+        <h2>Predicted Sales Value</h2>
+        <p class="price">₹ {{ prediction }}</p>
+
+        <h3>Stock Risk Level</h3>
+        <p class="risk">{{ risk }}</p>
+
+        <h3>Top Factors Influencing Sales</h3>
+        <ul>
+            {% for f, v in features %}
+                <li><strong>{{ f }}</strong> : {{ "%.2f"|format(v) }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
