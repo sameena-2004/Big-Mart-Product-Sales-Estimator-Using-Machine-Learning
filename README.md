@@ -168,7 +168,7 @@ Deploy application on cloud (AWS / Heroku)
 
 This project is developed for academic and learning purposes.
 
-🙋‍♀️ Author
-
+👩‍💻 Author
 Sameena Pathan
-GitHub: sameena-2004
+Data Science Student
+GitHub: https://github.com/sameena-2004
